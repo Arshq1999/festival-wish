@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Festival Entry</title>
+</head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
+
+    <h1>🎉 Enter Your Friend's Name 🎉</h1>
+
+    <input type="text" id="name" placeholder="Enter name" style="padding:10px; font-size:16px;">
+
+    <br><br>
+
+    <button onclick="goToWishPage()" style="padding:10px 20px; font-size:16px;">
+        Send Wishes
+    </button>
+
+    <script>
+        function goToWishPage() {
+            let name = document.getElementById("name").value;
+
+            if(name === "") {
+                alert("Please enter a name");
+            } else {
+                // Redirect to next page with name in URL
+                window.location.href = "wishes.html?name=" + encodeURIComponent(name);
+            }
+        }
+    </script>
+
+</body>
+</html>
